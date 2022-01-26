@@ -13,11 +13,11 @@ import {map} from "rxjs/operators";
 export class AppComponent {
   title = 'angular-weather-app';
   weatherInfo$ = this.store.select(fromStore.selectWeatherInfo).pipe(tap(console.log));
-  error$ = this.store.select(fromStore.selectWeatherError);
+  error$ = this.store.select(fromStore.selectWeatherError).pipe(tap(console.log));
   showResult$ = combineLatest(
     this.weatherInfo$,
     this.error$
-  ).pipe(tap(([weatherInfo, error]) => console.log(weatherInfo || error) ),map(([weatherInfo, error]) => weatherInfo || error )) as Observable<boolean>;
+  ).pipe(map(([weatherInfo, error]) => weatherInfo || error )) as Observable<boolean>;
 
   constructor(private store: Store<fromStore.State>, private lazyLoadedBgService: LazyLoadedImageServices) {}
 

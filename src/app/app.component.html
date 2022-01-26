@@ -2,6 +2,6 @@
 <app-weather>
   <app-title [secondary]="true" [showResult]="showResult$ | async">Weather app</app-title>
   <app-search-city (submitted)="handleSearchCity($event)" [showResult]="showResult$ | async"></app-search-city>
-  <app-result [weatherInfo]="weatherInfo$ | async"></app-result>
+  <app-result *ngIf="!(error$ | async)" [weatherInfo]="weatherInfo$ | async"></app-result>
   <app-not-found *ngIf="error$ | async"></app-not-found>
 </app-weather>
