@@ -1,0 +1,49 @@
+<div class="results-container" *ngIf="weatherInfo">
+  <div class="location-wrapper">
+    <big-label>
+      {{weatherInfo?.city}}, {{weatherInfo?.country}}
+    </big-label>
+    <small-label weight="400">{{weatherInfo?.date}}</small-label>
+  </div>
+  <div class="current-weather-wrapper">
+    <div class="weather-icon"><i [class]="weatherInfo?.main | weatherIcon"></i></div>
+    <div class="temperature-wrapper">
+      <div class="temperature">{{math.floor(temp)}}&#176;</div>
+      <small-label weight="400" [firstToUpperCase]="true">{{weatherInfo?.description}}</small-label>
+    </div>
+  </div>
+  <div class="weather-details-wrapper">
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{math.floor(highestTemp)}}&#176;</small-label>
+      <text align="center">Hight</text>
+    </div>
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{weatherInfo?.wind}}mph</small-label>
+      <text align="center">Wind</text>
+    </div>
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{weatherInfo?.sunrise}}</small-label>
+      <text align="center">Sunrise</text>
+    </div>
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{math.floor(lowestTemp)}}&#176;</small-label>
+      <text align="center">Low</text>
+    </div>
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{weatherInfo?.humidity}}%</small-label>
+      <text align="center">Rain</text>
+    </div>
+    <div class="weather-detail">
+      <small-label align="center" weight="400">{{weatherInfo?.sunset}}</small-label>
+      <text align="center">Sunset</text>
+    </div>
+  </div>
+  <div class="forecast-wrapper">
+    <medium-label weight="400" align="center">Forecast</medium-label>
+    <div class="forecast">
+      <ng-container *ngFor="let forecast of weatherInfo?.forecast | slice:0:6">
+        <app-forecast-hour [forecast]="forecast"></app-forecast-hour>
+      </ng-container>
+    </div>
+  </div>
+</div>

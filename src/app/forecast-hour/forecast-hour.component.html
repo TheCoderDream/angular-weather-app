@@ -1,0 +1,6 @@
+<div class="forecast-wrapper">
+  <text align="center">{{forecast?.dt_txt | slice : 5 : 7 }}.{{forecast?.dt_txt | slice: 8 : 10}}</text>
+  <text align="center">{{forecast?.dt_txt | slice: 11: 13 }}:00</text>
+  <img [src]="iconUrl" alt="" class="weather-icon">
+  <small-label align="center" weight="400" [innerHTML]="temp"></small-label>
+</div>

@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+body {
+  min-height: 100vh;
+  position: relative;
+}
+
+.default-bg {
+  margin: 0 20px;
+}
+
+.default-bg::before {
+  background-image: url('./assets/2850815.jpg');
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  filter: blur(2px) brightness(0.7);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.1);
+  transition: filter 300ms ease-in;
+}
+
+.weather-app {
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  margin: 0;
+  cursor: pointer;
+}
+
+
+::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: rgba(0, 0, 0, .3);
+}

@@ -1,0 +1,34 @@
+.forecast-wrapper {
+  flex-shrink: 0;
+  flex-basis: 90px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.forecast-wrapper:first-child {
+  margin-left: 0;
+}
+.forecast-wrapper:last-child {
+  margin-right: 0;
+}
+.weather-icon {
+  display: block;
+  height: 50px;
+  width: 50px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 768px) {
+  .forecast-wrapper {
+    flex-basis: 110px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .forecast-wrapper {
+    flex-basis: 125px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .forecast-wrapper {
+    flex-basis: 140px;
+  }
+}

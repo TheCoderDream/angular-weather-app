@@ -1,0 +1,112 @@
+.results-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px 0;
+  position: relative;
+  top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  animation: resultFadeIn 0.5s 1.4s forwards;
+}
+@keyframes resultFadeIn {
+to {
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+}
+}
+.location-wrapper {
+  flex-basis: 100%;
+}
+.current-weather-wrapper {
+  flex-basis: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: auto 1fr;
+  margin: 20px 0;
+  grid-gap: 30px;
+}
+.weather-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  color: #ffffff;
+}
+.temperature {
+  display: block;
+  font-size: 50px;
+  font-weight: 400;
+  color: #ffffff;
+}
+.weather-details-wrapper {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin: 20px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  align-self: flex-start;
+}
+.weather-detail {
+  flex-basis: calc(100% / 3);
+  padding: 10px;
+}
+.forecast-wrapper {
+  flex-basis: 100%;
+  margin: 20px 0;
+  overflow: hidden;
+}
+.forecast {
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit ,minmax(150px, 1fr));
+  grid-gap: 10px;
+  position: relative;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+@media screen and (min-width: 525px) {
+  .current-weather-wrapper {
+    flex-basis: 50%;
+    padding-right: 10px;
+  }
+  .weather-details-wrapper {
+    flex-basis: 50%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .current-weather-wrapper {
+    grid-template-columns: 1fr 1fr;
+    padding-right: 20px;
+  }
+  .weather-icon {
+    font-size: 100px;
+    justify-content: flex-end;
+  }
+  .temperature {
+    font-size: 70px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .weather-icon {
+    font-size: 120px;
+  }
+  .temperature {
+    font-size: 90px;
+  }
+  .weather-detail {
+    padding: 20px 10px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .weather-icon {
+    font-size: 140px;
+  }
+  .temperature {
+    font-size: 110px;
+  }
+}
